@@ -225,6 +225,7 @@ export default function Manual() {
                 </p>
             </section>
         </article>
+        <div className={styles.bottomSpaceDiv}></div> {/*This is a temporary fix for content hiding behind floating buttons*/}
         <a href="#toc" className={styles.tocFinder}>TOC</a>
         <RootNavigation />
     </>;

@@ -31,7 +31,7 @@
 
 .manual > section > p{
     font-family: 'Libertinus Mono', 'serif';
-    font-size: 14pt;
+    font-size: 13pt;
 }
 
 .erdiagram{
@@ -65,4 +65,8 @@
 
 .tocFinder:hover{
     background-color: rgb(200,200,200);
+}
+
+.bottomSpaceDiv{
+    height: 100px;
 }
