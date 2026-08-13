@@ -4,7 +4,7 @@ html{
   --accent-color: white;
   --accent-background: rgb(69, 94, 139);
   --accent-background-hover: rgb(53, 71, 107);
-  font-family: "Libertinus Mono", monospace;
+  font-family: "Montserrat", monospace;
   font-weight: 400;
   font-style: normal;
   font-size: 12pt;
@@ -17,6 +17,13 @@ body{
 @font-face {
   font-family: "Libertinus Mono";
   src: url("./assets/Libertinus_Mono/LibertinusMono-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/Montserrat/Montserrat_VariableFont_wght.ttf");
   font-weight: 400;
   font-style: normal;
 }
