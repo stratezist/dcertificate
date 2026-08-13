@@ -7,7 +7,7 @@ export default function Home() {
   return <>
     <header className={styles.title_content}>
       <DcertificateLogo size={200} />
-      <h1>DCERTIFICATE</h1>
+      <h1 style={{fontWeight:500, fontFamily:'monospace'}}>DCERTIFICATE</h1>
       <p>
         Web application for
         issuing, approving and receiving
@@ -39,7 +39,7 @@ export default function Home() {
       ]} />
       <p>
         This is an Educational Project.
-        The <a href="https://github.com/quadgras/dcertificate">source code</a> is available under MIT Licence.
+        The <a href="https://github.com/stratezist/dcertificate">source code</a> is available under MIT Licence.
       </p>
     </div>
     <footer>
