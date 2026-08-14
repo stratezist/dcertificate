@@ -1,57 +1,59 @@
-.manual{
-    width: min(90%,800px);
-    justify-content: center;
-    text-align: justify;
-    margin: 10px auto 10px auto;
-    /* font-family: 'Libertinus Mono', 'serif'; */
-}
-
-.toc{
-    border: 1px solid black;
-    background-color: whitesmoke;
+.articleLayout {
+    border-top: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 10px;
-    /* position: sticky;
-    top: 0;
-    background-color: white; */
+    width: fit-content;
+    margin: auto;
 }
 
-.toc > ol> li > a{
+.manual {
+    /* width: min(95%, 800px); not needed with flex layouts */
+    /* margin: 10px auto 10px auto; */
+    max-width: 800px;
+    text-align: justify;
+}
+
+.toc {
+    padding: 10px;
+    text-align: left;
+}
+
+.toc>ol>li>a {
     color: black;
     width: fit-content;
 }
 
-.manual > section > h1{
+.manual>section>h1 {
     font-size: 20pt;
     font-weight: 500;
     padding: 5px;
-    background-color: rgb(232, 235, 247);
+    background-color: rgb(234, 242, 255);
+    font-family: 'Libertinus Mono', 'serif';
     /* border-bottom: 1px solid; */
     /* border-radius: 5px; */
 }
 
-.manual > section > p{
-    font-family: 'serif'; /*Libertinus Mono not used*/
+.manual>section>p {
     font-size: 13pt;
 }
 
-.erdiagram{
+.erdiagram {
     text-align: center;
 }
 
-.erdiagram > img{
+.erdiagram>img {
     max-width: 100%;
 }
 
 
-.tocFinder{
+.tocFinder {
     position: fixed;
     bottom: 20px;
     right: 100px;
     z-index: 10;
-    /* background: radial-gradient(white, rgb(210, 210, 210) 90%); */
-    /* background-color: rgb(220, 220, 220); */
     background-color: var(--accent-background);
-    /* color: black; */
     color: white;
     height: 70px;
     width: 70px;
@@ -62,11 +64,26 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    /* box-shadow: 0px 0px 25px grey; */
-    /* animation: pulse 1s ease-in-out infinite; */
 }
 
-.tocFinder:hover{
-    /* background-color: rgb(200,200,200); */
+.tocFinder:hover {
     background-color: var(--accent-background-hover)
+}
+
+@media (min-width: 768px) {
+    .articleLayout {
+        flex-direction: row-reverse;
+        align-items: flex-start;
+    }
+
+    .toc {
+        max-width: 300px;
+        position: sticky;
+        top: 10px;
+    }
+
+    .tocFinder {
+        /*TOC finder not needed in desktop mode*/
+        display: none;
+    }
 }
