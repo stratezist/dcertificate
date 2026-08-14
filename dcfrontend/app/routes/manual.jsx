@@ -2,15 +2,14 @@ import RootNavigation from "../components/root_navigation";
 import styles from "./styles/manual.module.css";
 import erdiagram from "../assets/dcertificate_logical_architecture.webp";
 import DcertificateLogo from "../components/logo";
-import { ArrowUp } from "lucide-react";
 
 export default function Manual() {
     return <>
         <DcertificateLogo size={120} />
-        <h1 id="topHeading">User Manual</h1>
+        <h1>User Manual</h1>
 
         <div className={styles.articleLayout}>
-            <nav className={styles.toc}>
+            <nav className={styles.toc} id="toc">
                 <b>Table of Contents</b>
                 <ol>
                     <li><a href="#introduction">Introduction</a></li>
@@ -227,7 +226,7 @@ export default function Manual() {
             </article>
         </div>
         {/*Following line sends to the top of page. Meant mainly for showing TOC*/}
-        <a href="#topHeading" className={styles.tocFinder}><ArrowUp /></a>
+        <a href="#toc" className={styles.tocFinder}>TOC</a>
         <RootNavigation />
     </>;
 }
