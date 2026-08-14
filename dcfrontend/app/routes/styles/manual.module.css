@@ -20,9 +20,6 @@
     width: fit-content;
 }
 
-html{
-    scroll-behavior: smooth;
-}
 .manual > section > h1{
     font-size: 20pt;
     font-weight: 500;
