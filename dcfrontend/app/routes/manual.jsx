@@ -6,7 +6,7 @@ import { ArrowUp } from "lucide-react";
 
 export default function Manual() {
     return <>
-        <h1>User Manual</h1>
+        <h1 id="topHeading">User Manual</h1>
 
         <DcertificateLogo size={120}/>
         
@@ -227,7 +227,7 @@ export default function Manual() {
             </section>
         </article>
         {/*Following line sends to the top of page. Meant mainly for showing TOC*/}
-        <a href="#" className={styles.tocFinder}><ArrowUp/></a>
+        <a href="#topHeading" className={styles.tocFinder}><ArrowUp/></a>
         <RootNavigation />
     </>;
 }
