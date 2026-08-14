@@ -2,6 +2,7 @@ import RootNavigation from "../components/root_navigation";
 import styles from "./styles/manual.module.css";
 import erdiagram from "../assets/dcertificate_logical_architecture.webp";
 import DcertificateLogo from "../components/logo";
+import { ArrowUp } from "lucide-react";
 
 export default function Manual() {
     return <>
@@ -11,7 +12,7 @@ export default function Manual() {
         
         <article className={styles.manual}>
 
-            <nav className={styles.toc} id="toc">
+            <nav className={styles.toc}>
                 <b>Table of Contents</b>
                 <ol>
                     <li><a href="#introduction">Introduction</a></li>
@@ -225,8 +226,8 @@ export default function Manual() {
                 </p>
             </section>
         </article>
-        <div className={styles.bottomSpaceDiv}></div> {/*This is a temporary fix for content hiding behind floating buttons*/}
-        <a href="#toc" className={styles.tocFinder}>TOC</a>
+        {/*Following line sends to the top of page. Meant mainly for showing TOC*/}
+        <a href="#" className={styles.tocFinder}><ArrowUp/></a>
         <RootNavigation />
     </>;
 }

@@ -46,7 +46,6 @@ export default function Home() {
       {/* <a href="https://github.com/quadgras/dcertificate">Source Code</a> available under MIT Licence. <br/> */}
       &copy;2026 Abhijeet Verma
     </footer>
-    <div style={{height:'100px'}}></div> {/*Temporary fix for text hiding behind floating button*/}
     <RootNavigaion />
   </>;
 }

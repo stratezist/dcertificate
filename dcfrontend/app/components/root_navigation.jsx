@@ -26,6 +26,12 @@ export default function RootNavigation() {
         <button className={styles.toggle} onClick={toggle}>
             {open ? <X /> : <Menu />}
         </button>
+
+        {/* Following line is temporary fix for text hiding behind floating button.
+            Adds Space at bottom of page if you put this component at bottom of page.
+        */}
+        <div style={{height:'100px'}}></div>
+
         {shouldRender &&
             <div className={`${styles.nav_container} ${open?styles.slideIn:styles.slideOut}`} onAnimationEnd={handleAnimationEnd}>
                 <nav className={styles.root_navigation}>
