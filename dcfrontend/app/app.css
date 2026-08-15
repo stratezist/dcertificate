@@ -1,8 +1,8 @@
 html{
   text-align: center;
-  --background2: rgb(80, 110, 120);
+  --background2: rgb(70, 100, 120);
   --accent-color: white;
-  --accent-background: rgb(80, 110, 120);
+  --accent-background: rgb(70, 100, 120);
   --accent-background-hover: rgb(111, 141, 150);
   font-family: "Montserrat", monospace;
   font-weight: 400;
@@ -87,8 +87,9 @@ header{
     /* border-bottom: 1px solid black; */
     padding: 15px;
     margin-bottom: 15px;
-    background-color: var(--background2);
+    /* background-color: var(--background2); */
     /* background: radial-gradient(circle, var(--accent-background-hover), black); */
+    background: radial-gradient(circle, var(--background2), rgb(62, 88, 97));
     color: white;
     min-height: 10vh;
     display: flex;
@@ -100,7 +101,7 @@ header{
 
 header > h1{
   font-weight: bold;
-  font-size: 25pt;
+  font-size: 20pt;
   padding: 0;
   margin: 0;
 }
