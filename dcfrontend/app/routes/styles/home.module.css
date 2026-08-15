@@ -13,7 +13,12 @@
     margin: 10px auto 10px auto;
 }
 
-.title_content{
-    padding: 15px;
-    /* background-color: black; */
+.homePageHeader{
+    background-color: white;
+    color: black;
+}
+
+.homePageHeader > p{
+    margin: 0;
+    padding: 0;
 }

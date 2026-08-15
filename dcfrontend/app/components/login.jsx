@@ -6,7 +6,9 @@ import PasswordInput from "./password_input";
 export default function LogIn({ title, registerURL }) {
 
     return <div>
-        <h1>{title}</h1>
+        <header>
+            <h1>{title}</h1>
+        </header>
         <Form method="POST" className={styles.auth_form}>
             <label for="username">Username</label>
             <input name="username" type="text" required />

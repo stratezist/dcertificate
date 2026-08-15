@@ -5,9 +5,9 @@ import DetailList from "../components/detail_list";
 
 export default function Home() {
   return <>
-    <header className={styles.title_content}>
-      <DcertificateLogo size={200} />
-      <h1 style={{fontWeight:500, fontFamily:'monospace'}}>DCERTIFICATE</h1>
+    <header className = {styles.homePageHeader}>
+      <DcertificateLogo size={200} backgroundColor="rgb(20,20,20)" />
+      <h1>DCERTIFICATE</h1>
       <p>
         Web application for
         issuing, approving and receiving

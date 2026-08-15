@@ -1,11 +1,13 @@
-import {Form, Link} from "react-router";
+import { Form, Link } from "react-router";
 import RootNavigation from "./root_navigation";
 import styles from "./styles/auth.module.css";
 import PasswordInput from "./password_input";
 
-export default function Register({title, loginURL}){
+export default function Register({ title, loginURL }) {
     return <div>
-        <h1>{title}</h1>
+        <header>
+            <h1>{title}</h1>
+        </header>
         <Form method="POST" className={styles.auth_form}>
             <label for="username">Username</label>
             <input name="username" type="text" required />

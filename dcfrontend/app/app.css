@@ -1,9 +1,9 @@
 html{
   text-align: center;
-  --background2: rgb(69, 94, 139);
+  --background2: rgb(80, 110, 120);
   --accent-color: white;
-  --accent-background: rgb(69, 94, 139);
-  --accent-background-hover: rgb(53, 71, 107);
+  --accent-background: rgb(80, 110, 120);
+  --accent-background-hover: rgb(111, 141, 150);
   font-family: "Montserrat", monospace;
   font-weight: 400;
   font-style: normal;
@@ -80,4 +80,27 @@ h2{
   font-weight: normal;
   margin-top:5px;
   margin-bottom:5px;
+}
+
+header{
+    /* box-shadow: 0px 0px 15px rgb(168, 168, 168); */
+    /* border-bottom: 1px solid black; */
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: var(--background2);
+    /* background: radial-gradient(circle, var(--accent-background-hover), black); */
+    color: white;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 15px;
+}
+
+header > h1{
+  font-weight: bold;
+  font-size: 25pt;
+  padding: 0;
+  margin: 0;
 }

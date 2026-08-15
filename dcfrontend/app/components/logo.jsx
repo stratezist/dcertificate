@@ -7,7 +7,7 @@ export default function DcertificateLogo({
     padding = '10px',
     backgroundColor = 'transparent'
 }) {
-    return <svg
+    const logoSVG =  <svg
         width={size}
         height={size}
         viewBox="0 0 122.78522 122.78531"
@@ -16,7 +16,7 @@ export default function DcertificateLogo({
         xmlnsXlink="http://www.w3.org/1999/xlink"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:svg="http://www.w3.org/2000/svg"
-        style={{padding: padding, margin: margin, backgroundColor:backgroundColor}}
+        style={{padding: padding, margin: margin}} /* backgroundColor:backgroundColor */
     >
         <defs id="defs1">
             <linearGradient id="linearGradient74">
@@ -105,5 +105,13 @@ export default function DcertificateLogo({
             />
         </g>
     </svg>;
+
+    if(backgroundColor === 'transparent'){
+        return logoSVG;
+    } else {
+        return <div style={{backgroundColor: backgroundColor, borderRadius: '100%', padding: '15px', width: 'fit-content'}}>
+            {logoSVG}
+        </div>;
+    }
 
 }

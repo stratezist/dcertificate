@@ -5,8 +5,10 @@ import DcertificateLogo from "../components/logo";
 
 export default function Manual() {
     return <>
-        <DcertificateLogo size={120} />
+        <header>
+        {/* <DcertificateLogo size={120} /> */}
         <h1>User Manual</h1>
+        </header>
 
         <div className={styles.articleLayout}>
             <nav className={styles.toc} id="toc">
