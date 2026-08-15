@@ -1,9 +1,9 @@
 html{
   text-align: center;
-  --background2: rgb(70, 100, 130);
+  --background2: rgb(80, 110, 140);
   --accent-color: white;
-  --accent-background: rgb(70, 100, 130);
-  --accent-background-hover: rgb(90,120,150);
+  --accent-background: rgb(80, 110, 140);
+  --accent-background-hover: rgb(100,130,160);
   font-family: "Montserrat", monospace;
   font-weight: 400;
   font-style: normal;
@@ -88,7 +88,7 @@ header{
     margin-bottom: 15px;
     /* background-color: var(--background2); */
     /* background: radial-gradient(circle, var(--accent-background-hover), black); */
-    background: linear-gradient(180deg, rgb(60,90,120), var(--accent-background-hover));
+    background: linear-gradient(180deg, rgb(60,90,120), rgb(90,120,150));
     color: white;
     min-height: 10vh;
     display: flex;
