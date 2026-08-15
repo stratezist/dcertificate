@@ -15,8 +15,9 @@
 
 .homePageHeader{
     /* background-color: white; */
-    color: black;
-    background: none;
+    /* color: black; */
+    /* background: none; */
+    padding: 25px;
 }
 
 .homePageHeader > h1{
