@@ -2,7 +2,7 @@ import Certificate from "../components/certificate.jsx";
 import { useNavigate } from "react-router";
 import { backend_request } from "../lib/backend.js";
 import { flash } from "../lib/flash.js";
-import { Share2, ArrowLeft } from "lucide-react";
+import { Share2, ArrowLeft, Download } from "lucide-react";
 import styles from "./styles/certificate.module.css";
 
 export async function clientLoader({ params }) {
@@ -45,6 +45,9 @@ export default function CertificatePage({ loaderData }) {
             <div className={styles.buttonBox}>
                 <button onClick={() => navigate(-1)}><ArrowLeft /></button>
                 <button onClick={share_certificate}><Share2 /></button>
+                <button onClick={async ()=> await flash([{type:'info', message: "Feature not implemented."}])}>
+                    <Download/>
+                </button>
             </div>
         </div>;
     } else {

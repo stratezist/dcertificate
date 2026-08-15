@@ -6,7 +6,7 @@
 
 .logo {
   /* perspective: 100px; */
-  animation: flipLogo 1.5s ease-in-out;
+  animation: flipLogo 1s ease-in-out;
 }
 
 @keyframes loadingLogo {
@@ -20,7 +20,7 @@
 
 @keyframes flipLogo {
   from{
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
   }
   to{
     transform: rotateY(0deg);

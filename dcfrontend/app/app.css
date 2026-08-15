@@ -49,8 +49,9 @@ input{
   border-radius: 10px;
   border: 2px solid grey;
   background-color: whitesmoke;
-  padding: 5px;
-  font-family: monospace /*'Libertinus Mono', monospace*/;
+  padding: 10px;
+  /*font-family: monospace /*'Libertinus Mono', monospace*/;
+  font-family: 'Montserrat', 'sans-serif';
   font-size: inherit;
 }
 

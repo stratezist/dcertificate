@@ -2,24 +2,33 @@
     display: flex;
     flex-direction: row;
     width: fit-content;
-    /* margin: auto; */
     gap: 15px;
     padding: 15px;
-    /* padding-top: 10px; */
-    /* border: 1px solid; */
     border-radius: 20px;
-    /* background-color: rgb(229, 229, 229); */
     background-color: rgba(240, 240, 240, 0.8);
     position: sticky;
-    bottom: 20px;
+    bottom: 15px;
 }
 
 .pageLayout{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    gap: 20px;
-    overflow-y: scroll;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+
+    /* when the height of inner content is less than 100vh,
+       we can't center them because pageLayout also collapses.
+       So setting min height to 100% of view height
+       causes the page layout to expand to all available height (i.e screen height).
+       And then content can be vertically centred on the screen.
+       If content height goes out of screen, we don't want to force it
+       so we only set min height.
+    */
+    min-height: 100vh;
+
+    /* border box instructs that padding and borders should be included in height */
+    /* otherwise 100 vh is set to content height, padding is added over */
+    box-sizing: border-box;
 }
