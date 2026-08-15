@@ -88,7 +88,7 @@ header{
     margin-bottom: 15px;
     /* background-color: var(--background2); */
     /* background: radial-gradient(circle, var(--accent-background-hover), black); */
-    background: linear-gradient(180deg, rgb(44, 68, 75), var(--background2));
+    background: linear-gradient(180deg, rgb(60,90,120), var(--accent-background-hover));
     color: white;
     min-height: 10vh;
     display: flex;
