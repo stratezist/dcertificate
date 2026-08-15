@@ -1,12 +1,19 @@
 .certificate{
-    background-color: white;
-    border: 1px solid black;
-    margin: 10px auto 10px auto;
+    /* background-color: whitesmoke; */
+    background: radial-gradient(circle at top left,rgb(67, 148, 110),rgb(87, 131, 144));
+    /* background: linear-gradient(green, greenyellow); */
+    /* border: 1px solid black; */
     padding: 10px;
     width: min(700px, 90%);
     display:grid;
     grid-template-columns: 55% auto;
+    /* box-shadow: 0px 0px 30px rgb(202, 202, 202); */
     gap: 10px;
+}
+
+.left{
+    /* border: 1px solid black; */
+    background-color: white;
 }
 
 .invalid_overlay{
@@ -26,8 +33,10 @@
     border-left: 2px solid black; */
     padding: 10px;
     /* background-color: rgb(83, 100, 103); */
-    background: linear-gradient(rgb(61, 60, 60), var(--background2));
-    color: white;
+    background-color: rgba(255,255,255,1);
+    /* background: linear-gradient(rgb(61, 60, 60), var(--background2)); */
+    /* color: white; */
+    /* border: 1px solid black; */
 }
 
 .approvers{

@@ -32,12 +32,13 @@ body{
 
 button{
   background-color: var(--accent-background);
-  padding: 5px;
+  padding: 10px;
   color: var(--accent-color);
   border-radius: 5px;
-  font-family: monospace /*'Libertinus Mono', monospace*/;
+  font-family: 'Montserrat', 'sans-serif';
   font-size: inherit;
   border: none/*2px solid white*/;
+  border-radius: 10px;
 }
 
 button:hover{
@@ -45,7 +46,7 @@ button:hover{
 }
 
 input{
-  border-radius: 5px;
+  border-radius: 10px;
   border: 2px solid grey;
   background-color: whitesmoke;
   padding: 5px;

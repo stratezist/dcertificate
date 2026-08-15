@@ -1,5 +1,5 @@
 import styles from "./styles/certificate.module.css";
-import {CircleCheck} from "lucide-react";
+import DcertificateLogo from "./logo";
 
 function InvalidOverlay({data}){
     if(!data.valid){
@@ -15,7 +15,7 @@ function InvalidOverlay({data}){
 export default function Certificate({data}){
     return <div className={styles.certificate}>
         <InvalidOverlay data={data} />
-        <section>
+        <section className={styles.left}>
         <h1>{data.title}</h1>
         <p>
             {data.pre_subject} 
@@ -26,7 +26,7 @@ export default function Certificate({data}){
             <b>Certificate ID</b> {data.certificate_id} <br/>
             <b>Issued at</b> {data.issue_time} UTC
         </p>
-        <CircleCheck size="30" />
+        <DcertificateLogo size={80} />
         <p>
             This certificate is issued and authentic 
             on <a href={import.meta.env.VITE_FRONTEND_URL}>Dcertificate Website</a>.
