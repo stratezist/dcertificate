@@ -6,7 +6,7 @@ import DetailList from "../components/detail_list";
 export default function Home() {
   return <>
     <header className = {styles.homePageHeader}>
-      <DcertificateLogo size={200} backgroundColor="rgb(20,20,20)" />
+      <DcertificateLogo size={200} backgroundColor="rgb(20,20,20)" animation="flip"/>
       <h1>DCERTIFICATE</h1>
       <p>
         Web application for

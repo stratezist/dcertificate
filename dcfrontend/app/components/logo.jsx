@@ -2,12 +2,13 @@ import styles from "./styles/logo.module.css";
 
 export default function DcertificateLogo({ 
     size = 250, 
-    animation = false, 
+    animation = '',  /* 'loading'|'flip'*/
     margin = '5px',
     padding = '10px',
     backgroundColor = 'transparent'
 }) {
     const logoSVG =  <svg
+        className = {animation === 'flip'? styles.logo: null}
         width={size}
         height={size}
         viewBox="0 0 122.78522 122.78531"
@@ -70,7 +71,7 @@ export default function DcertificateLogo({
             style={{ display: "inline" }}
             transform="translate(-4.7532149,-4.7531807)"
         >
-            <g className={animation && styles.badge}>
+            <g className={animation === 'loading'? styles.badge: null}>
                 <path
                     id="path11"
                     style={{
@@ -109,7 +110,7 @@ export default function DcertificateLogo({
     if(backgroundColor === 'transparent'){
         return logoSVG;
     } else {
-        return <div style={{backgroundColor: backgroundColor, borderRadius: '100%', padding: '15px', width: 'fit-content'}}>
+        return <div style={{backgroundColor: backgroundColor, borderRadius: '100%', padding: '10px', width: 'fit-content'}}>
             {logoSVG}
         </div>;
     }

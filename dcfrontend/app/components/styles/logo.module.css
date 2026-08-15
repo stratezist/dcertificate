@@ -1,14 +1,28 @@
 .badge {
   transform-origin: center;
   transform-box: fill-box;
-  animation: rotateLogo 5s linear infinite;
+  animation: loadingLogo 5s linear infinite;
 }
 
-@keyframes rotateLogo {
+.logo {
+  /* perspective: 100px; */
+  animation: flipLogo 1.5s ease-in-out;
+}
+
+@keyframes loadingLogo {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes flipLogo {
+  from{
+    transform: rotateY(360deg);
+  }
+  to{
+    transform: rotateY(0deg);
   }
 }
