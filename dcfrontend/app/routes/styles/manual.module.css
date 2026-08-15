@@ -27,11 +27,12 @@
 
 .manual>section>h1 {
     font-size: 20pt;
-    font-weight: 500;
+    font-weight: normal;
     padding: 5px;
-    background-color: rgb(232, 232, 232);
-    font-family: 'Libertinus Mono', 'serif';
+    /* background-color: rgb(232, 232, 232); */
+    /* font-family: 'Libertinus Mono', 'serif'; */
     /* border-bottom: 2px solid; */
+    font-family: monospace;
     border-radius: 3px;
 }
 

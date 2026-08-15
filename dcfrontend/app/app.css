@@ -83,13 +83,12 @@ h2{
 }
 
 header{
-    /* box-shadow: 0px 0px 15px rgb(168, 168, 168); */
-    /* border-bottom: 1px solid black; */
+    /* box-shadow: 0px 0px 15px rgb(150, 150, 150); */
     padding: 15px;
     margin-bottom: 15px;
     /* background-color: var(--background2); */
     /* background: radial-gradient(circle, var(--accent-background-hover), black); */
-    background: radial-gradient(circle, var(--background2), rgb(62, 88, 97));
+    background: linear-gradient(180deg, rgb(56, 83, 92), var(--background2));
     color: white;
     min-height: 10vh;
     display: flex;
