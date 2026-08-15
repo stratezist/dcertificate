@@ -28,12 +28,12 @@
 .manual>section>h1 {
     font-size: 20pt;
     font-weight: normal;
-    padding: 5px;
+    /* padding: 5px; */
     /* background-color: rgb(232, 232, 232); */
     /* font-family: 'Libertinus Mono', 'serif'; */
-    /* border-bottom: 2px solid; */
+    border-bottom: 1px solid grey;
     font-family: monospace;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 
 .erdiagram {
