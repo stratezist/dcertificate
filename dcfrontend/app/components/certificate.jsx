@@ -3,11 +3,11 @@ import DcertificateLogo from "./logo";
 
 function InvalidOverlay({ data }) {
     if (!data.valid) {
-        return <div className={styles.invalid_overlay}>{
+        return <div className={styles.invalid_overlay}><p>{
             data.revoke_message === null ?
                 "This certificate has expired." :
                 `This certificate is revoked by issuer. Reason: ${data.revoke_message}`
-        }
+        }</p>
         </div>;
     }
 }

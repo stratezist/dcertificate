@@ -37,14 +37,30 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    position: relative;
     /* width: 500px; */
 }
 
 .invalid_overlay{
-    background-color: rgb(255, 0, 0);
+    background-color: rgba(255, 255, 255, 0.5);
     color: white;
     padding: 5px;
-    font-weight: normal;
+    font-weight: bold;
+
+    position: absolute;
+    left: 0;
+    bottom:0;
+    top: 0;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.invalid_overlay > p{
+    background-color: rgb(255, 0, 0);
+    width: 100%;
+    padding: 10px;
 }
 
 @media (min-width:700px) {
