@@ -32,3 +32,19 @@
     /* otherwise 100 vh is set to content height, padding is added over */
     box-sizing: border-box;
 }
+
+@media print {
+    .buttonBox{
+        display: none;
+    }
+
+    @page {
+        size: a4 landscape;
+        /* margin: 1cm; */
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important; /* Chrome, Safari, Edge */
+        print-color-adjust: exact !important;         /* Standard modern browsers */
+    }
+}
