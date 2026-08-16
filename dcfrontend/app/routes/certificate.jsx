@@ -41,11 +41,10 @@ export default function CertificatePage({ loaderData }) {
 
     if (loaderData && loaderData.success) {
         return <div className={styles.pageLayout}>
-            <Certificate data={loaderData.data} />
+            <Certificate data={loaderData.data}/>
             <div className={styles.buttonBox}>
                 <button onClick={() => navigate(-1)}><ArrowLeft /></button>
                 <button onClick={share_certificate}><Share2 /></button>
-                {/* <button onClick={async ()=> await flash([{type:'info', message: "Feature not implemented."}])}> */}
                 <button onClick={() => window.print()}>
                     <PrinterIcon />
                 </button>

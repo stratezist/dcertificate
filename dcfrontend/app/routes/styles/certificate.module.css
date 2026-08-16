@@ -1,4 +1,4 @@
-.buttonBox{
+.buttonBox {
     display: flex;
     flex-direction: row;
     width: fit-content;
@@ -10,7 +10,7 @@
     bottom: 15px;
 }
 
-.pageLayout{
+.pageLayout {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +34,7 @@
 }
 
 @media print {
-    .buttonBox{
+    .buttonBox {
         display: none;
     }
 
@@ -44,7 +44,31 @@
     }
 
     * {
-        -webkit-print-color-adjust: exact !important; /* Chrome, Safari, Edge */
-        print-color-adjust: exact !important;         /* Standard modern browsers */
+        -webkit-print-color-adjust: exact !important;
+        /* Chrome, Safari, Edge */
+        print-color-adjust: exact !important;
+        /* Standard modern browsers */
+    }
+
+    body{
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    /* without fixed outer layout,
+       firefox was printing in 2 pages.
+       Don't know why.
+       So, made an adjustment with fixed sizing.
+       My guess is fixed sizing forces the outer layout.
+    */
+
+    .pageLayout{
+        margin: 0;
+        box-sizing: border-box;
+        position: fixed;
+        left: 1mm;
+        right: 1mm;
+        top: 1mm;
+        bottom: 1mm;
     }
 }
