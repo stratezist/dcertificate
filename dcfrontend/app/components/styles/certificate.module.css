@@ -9,29 +9,29 @@
 
 .certificateLayout{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     min-height: 500px;
+    max-width: 1000px;
     /* width:800px; */
     background-color: blue;
     background: radial-gradient(circle,rgb(67, 148, 110), rgb(68, 103, 113));
     /* background: radial-gradient(circle at top left,rgb(67, 148, 110),rgb(87, 131, 144)); */
     /* background: linear-gradient(green, greenyellow); */
-    padding: 15px;
-    gap: 15px;
+    padding: 20px;
+    gap: 20px;
 }
 
 .metaData{
     flex-grow: 1;
+    flex: 1;
     padding: 20px;
     background: white;
-    width: 250px;
     font-size: 10pt;
 }
 
 .mainData{
     flex-grow: 1;
-    flex-shrink: 1;
+    flex: 3;
     background: white;
     padding: 20px;
     display: flex;
@@ -45,4 +45,10 @@
     color: white;
     padding: 5px;
     font-weight: normal;
+}
+
+@media (min-width:700px) {
+    .certificateLayout{
+        flex-direction: row;
+    }
 }
