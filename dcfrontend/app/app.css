@@ -12,6 +12,20 @@ html{
   /* scroll-behavior: smooth; */
 }
 
+/* smooth background color transitions in all the nodes.
+ * currently removed because it may cause janks on low powered devices.
+ * Future consideration/recommendation, create a hook useAnimations.
+ * Create a class .smoothColorTransition.
+ * Give a button to enable/disable animations.
+ * Apply the class if animations are enabled.
+ * (Similar to dark mode/light mode).
+ * Similarly, take out the animations in separate classes.
+ * Apply(add) the animation class only if animations enabled.
+*/
+/* html, html * {
+  transition: background-color 0.5s ease-in-out;
+} */
+
 .dark{
   background-color: rgb(20, 20, 20);
 }

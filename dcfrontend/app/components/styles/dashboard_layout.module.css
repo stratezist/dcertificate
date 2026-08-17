@@ -1,10 +1,14 @@
 .pagelayout {
     display: grid;
-    grid-template-columns: 80% auto;
+    /*Give the navbar exactly the space its content needs, and give all remaining space to .content.*/
+    grid-template-columns: 1fr auto; 
+    /* display: flex;
+    flex-direction: row; */
+    align-items: stretch; /* items fill the grid */
     gap: 10px;
     padding: 10px;
-    height: 100vh; /*calc(100vh - 20px); defining a height to layout so children can use 100%*/
-    box-sizing: border-box; 
+    height: 100dvh; /*100% dynamic view height*/
+    box-sizing: border-box;  /* include padding and borders in height */
 }
 
 .navbar {
@@ -14,8 +18,7 @@
     background: linear-gradient(rgb(200, 228, 223), rgb(130, 155, 173));
     border-radius: 10px;
     padding: 10px;
-    height: 100%;
-    box-sizing: border-box;
+    overflow: auto;
 }
 
 .navlink {
@@ -36,8 +39,5 @@
 }
 
 .content {
-    /* background-color: red; */
-    overflow: scroll;
-    height: 100%;
-    box-sizing: border-box;
+    overflow: auto;
 }
