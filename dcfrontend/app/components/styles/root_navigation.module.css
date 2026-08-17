@@ -97,7 +97,8 @@
 
 .active_navlink {
     flex: 1;
-    background-color: rgb(110, 110, 110);
+    background-color: rgb(125, 125, 125);
+    /* background-color: var(--accent-background); */
     color: white;
     text-decoration: none;
     padding: 10px;
