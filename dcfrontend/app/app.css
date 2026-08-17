@@ -27,7 +27,8 @@ html{
 } */
 
 .dark{
-  background-color: rgb(20, 20, 20);
+  background-color: rgb(50, 50, 50);
+  color: white;
 }
 
 body{
