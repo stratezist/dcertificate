@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./styles/root_navigation.module.css";
 import { NavLink } from "react-router";
-import { Menu, X } from "lucide-react";
+import { Moon, X, Menu, SearchIcon, HomeIcon, BookOpen } from "lucide-react";
 
 export default function RootNavigation() {
     const [open, set_open] = useState(false);
@@ -49,10 +49,10 @@ export default function RootNavigation() {
                     </fieldset>
                     <fieldset className={styles.optionsGroup}>
                         {/* <legend>Other Options</legend> */}
-                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/'>Home</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/search-certificate'>Search</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/user-manual'>Manual</NavLink> {/*User Manual*/}
-                        <button>Theme</button>
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/'><HomeIcon/></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/search-certificate'><SearchIcon/></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/user-manual'><BookOpen /></NavLink> {/*User Manual*/}
+                        <button className={styles.rootNavButton}><Moon/></button>
                     </fieldset>
                 </nav>
             </div>

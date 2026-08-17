@@ -106,13 +106,9 @@
     font-weight: 12pt;
 }
 
-/* .root_navigation > h2{
-    margin-top: 30px;
-} */
-
 .optionsGroup {
     /* background-color: red; */
-    border: 1px solid grey;
+    border: 2px solid grey;
     border-radius: 20px;
     padding: 10px;
     display: flex;
@@ -123,15 +119,14 @@
 
 .optionsGroupWithLegend{
     composes: optionsGroup; /* css modules' compose feature to inherit optionsGroup. In this case, alternative is to use both classes on element. */
-    padding-top: 1px; /* There is some extra space for legend on top. So reducing padding to remove it visually. */
+    padding-top: 2px; /* There is some extra space for legend on top. So reducing padding to remove it visually. */
 }
 
-legend {
+.optionsGroupWithLegend > legend{
     padding: 0 10px;
-    margin: auto;
+    /* margin: auto; if you want to center the legend */
 }
 
-.optionsGroup > button {
-    flex: 1;
-    flex-grow: 1;
+.rootNavButton {
+    composes: navlink;
 }
