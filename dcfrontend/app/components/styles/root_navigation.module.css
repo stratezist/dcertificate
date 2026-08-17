@@ -25,7 +25,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.7);
     color: white;
     z-index: 10;
 
@@ -33,6 +33,7 @@
     align-items: center;
     justify-content: center;
 
+    backdrop-filter: blur(10px);
 }
 
 .slideIn{
@@ -82,10 +83,10 @@
     font-weight: 13pt;
 }
 .navlink:hover{
-    background-color: rgb(40, 40, 40);
+    background-color: rgb(100, 100, 100);
 }
 .active_navlink{
-    background-color: rgb(64, 67, 67);
+    background-color: rgb(110, 110, 110);
     color: white;
     text-decoration: none;
     padding: 5px;
