@@ -65,7 +65,7 @@ export default function RootNavigation() {
                     <fieldset className = {styles.optionsGroup} >
                         {/* <legend>Controls</legend> */}
                         <button className={styles.rootNavButton} onClick={async () => await flash([{type:'info', 'message': 'Power on eco mode to disable animations and save battery or compute. Functionality not implemented yet.'}])}>
-                            <LeafIcon size = {20} color={'greenyellow'}/> {/*greenyellow will show active. give a notification when activated saying animations disabled.*/}
+                            <LeafIcon size = {20} color={'green'}/> {/*greenyellow will show active. give a notification when activated saying animations disabled.*/}
                         </button>
                         <button className={styles.rootNavButton}onClick={toggleTheme}>
                             {theme === 'light' ? <Sun size = {20} /> : <Moon size = {20} />}

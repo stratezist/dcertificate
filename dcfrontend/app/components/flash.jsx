@@ -52,18 +52,26 @@ export default function FlashNotification(){
     return(
         shouldRender && (
             <div className={`${styles.flash} ${show?styles.slideIn:styles.slideOut}`} onAnimationEnd={handleAnimationEnd}>
-                {flashData.map(notification => {
+                {flashData.map(function (notification) {
+                    let icon = null;
                     switch(notification.type){
                         case 'success': 
-                            return <p className={styles.message}><CircleCheck /> {notification.message}</p>;
+                            icon = <CircleCheck color='green' />;
+                            break;
                         case 'error': 
-                            return <p className={styles.message}><CircleX /> {notification.message}</p>;
+                            icon = <CircleX color='red'/>;
+                            break;
                         case 'info': 
-                            return <p className={styles.message}><Info /> {notification.message}</p>;
+                            icon = <Info />;
+                            break;
                         case 'warning': 
-                            return <p className={styles.message}><CircleAlert /> {notification.message}</p>;
+                            icon = <CircleAlert color='red'/>;
+                            break;
                     }
+
+                    return <div className={styles.message}>{icon}<p> {notification.message} </p></div>;
                 })}
+                
                 <button onClick={dismiss}>Dismiss</button>
             </div>
         )

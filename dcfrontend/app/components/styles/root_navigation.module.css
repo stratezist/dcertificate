@@ -26,16 +26,18 @@
     left: 0;
     right: 0;
     /*bottom: 0; */
-    height: 100dvh; /* trying to fix the eventual height decrease in phones when bottom navigation disappears*/
+    height: 100dvh;
+    /* trying to fix the eventual height decrease in phones when bottom navigation disappears*/
     /* width:100dvw; */
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    /* color: white; */
     z-index: 10;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    background-color: rgba(0,0,0, 0.3);
     backdrop-filter: blur(10px);
 
     overflow: auto;
@@ -51,6 +53,8 @@
 
 .root_navigation {
     /* width: min(400px, 80%); */
+    /* color: rgb(50, 50, 50); */
+    color: white;
     max-width: 300px;
     padding: 20px;
     display: flex;
@@ -91,13 +95,16 @@
 
 .navlink {
     flex: 1 1 auto;
-    color: white;
+    color: inherit;
     text-decoration: none;
     /* font-family: monospace; */
     border-radius: 10px;
     font-weight: 12pt;
     padding: 10px;
-    background-color: rgb(90, 90, 90);
+    /* background-color: rgb(90, 90, 90); */
+    /* background-color: rgb(210, 210, 210); */
+    background-color: rgb(200, 200, 200);
+    color: rgb(50, 50, 50);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,19 +112,21 @@
 }
 
 .navlink:hover {
-    background-color: rgb(100, 100, 100);
+    /* background-color: rgb(100, 100, 100); */
+    background-color: rgb(230, 230, 230);
 }
 
 .active_navlink {
     composes: navlink;
-    background-color: rgb(125, 125, 125);
+    /* background-color: rgb(180, 180, 180); */
+    background-color: rgb(230, 230, 230);;
 }
 
 .optionsGroup {
     /* background-color: red; */
     /* border: 1px solid grey; */
     border: none;
-    border-top: 2px solid grey;
+    border-top: 2px solid rgb(200,200,200);
     /* border-radius: 20px; */
     /* padding: 10px; */
     padding: 0;
@@ -129,9 +138,11 @@
     margin: 0;
 }
 
-.optionsGroupWithLegend{
-    composes: optionsGroup; /* css modules' compose feature to inherit optionsGroup. In this case, alternative is to use both classes on element. */
-    padding-top: 2px; /* There is some extra space for legend on top. So reducing padding to remove it visually. */
+.optionsGroupWithLegend {
+    composes: optionsGroup;
+    /* css modules' compose feature to inherit optionsGroup. In this case, alternative is to use both classes on element. */
+    padding-top: 2px;
+    /* There is some extra space for legend on top. So reducing padding to remove it visually. */
 }
 
 .optionsGroupWithLegend > legend{
