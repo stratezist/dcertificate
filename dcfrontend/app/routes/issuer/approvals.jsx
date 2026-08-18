@@ -4,6 +4,7 @@ import { backend_request } from "../../lib/backend";
 import { Form, useActionData } from "react-router";
 import styles from "./styles/commons.module.css";
 import {useEffect, useState} from "react";
+import { Trash2 } from "lucide-react";
 
 export async function clientLoader({ params }) {
     const response_json = await backend_request(
@@ -24,6 +25,12 @@ export async function clientAction({ request }) {
 
     if(form_object.delete){
         // delete approval form submitted
+        // note: if delete contains value "" then this will be false.
+        //       from next time, recommended to use form_data.has('delete').
+        // or better, name the submit button/input as "action".
+        // then here check the value of action like -
+        // if form_object.action === 'delete' or form_object.action === 'approve'.
+
         const response_json = await backend_request(
             'issuer/approval/delete',{
                 method: 'DELETE',
@@ -69,13 +76,16 @@ export async function clientAction({ request }) {
 
 function ApprovalCard({ approval }) {
     return <div className={styles.card}>
+        <div className={styles.card_content}>
         <p>
             <b>{approval.certification_title}</b> <br />
             by {approval.issuer_display_name}
         </p>
-        <Form method="POST">
+        </div>
+        <Form method="POST" className={styles.card_actions}>
             <input type="hidden" name="certification_id" value={approval.certification_id} />
-            <input type="submit" name="delete" value="Delete" />
+            {/* <input type="submit" name="delete" value="Delete" /> */}
+            <button className={styles.delete_button} type="submit" name="delete" value="delete">Delete</button>
         </Form>
     </div>;
 }
@@ -107,14 +117,16 @@ export default function Approvals({ loaderData }) {
                     <input name="certification_id" type="text" required="true"/>
                     <input name="fetch" type="submit" value="Fetch Details" />
                 </Form>:
-                <>
-                    <p><b>{certification.title}</b> by {certification.issuer_display_name}</p>
+                <div className={styles.card}>
+                    <div className = {styles.card_content}><b>{certification.title}</b> by {certification.issuer_display_name}</div>
+                    <div className={styles.card_actions}>
                     <Form method='POST'>
                         <input name='certification_id' type='hidden' value={certification.id}/>
                         <input name='approve' type="submit" value="Approve"/>
                     </Form>
-                    <button onClick={()=>setCertification(null)}>Cancel</button>
-                </>
+                    <button onClick={()=>setCertification(null)} className = {styles.actions}>Cancel</button>
+                    </div>
+                </div>
             }
         </div>
     </>;

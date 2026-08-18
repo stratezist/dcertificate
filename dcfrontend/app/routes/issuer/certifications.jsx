@@ -1,5 +1,6 @@
 import {backend_request} from "../../lib/backend";
 import {Link} from "react-router";
+import { PencilIcon, Plus } from "lucide-react";
 import styles from "./styles/commons.module.css";
 
 export async function clientLoader({params}){
@@ -18,10 +19,14 @@ export async function clientLoader({params}){
 
 function CertificationCard({certification}){
     return <div className={styles.card}>
-        ID: {certification.id} <br/>
-        Title: {certification.title} <br/>
-        <Link to={`/issuer/certification/${certification.id}`}>Edit</Link> <br/>
-        <Link to={`/issuer/issue/${certification.id}`}>Issue</Link>
+        <div className={styles.card_content}>
+            <span><b>{certification.title}</b></span> <br/>
+        <span>ID: {certification.id}</span>
+        </div>
+        <fieldset className={styles.card_actions}>
+        <Link to={`/issuer/certification/${certification.id}`} className={styles.link_button}>Edit</Link>
+        <Link to={`/issuer/issue/${certification.id}`} className={styles.link_button}>Issue</Link>
+        </fieldset>
     </div>;
 }
 
@@ -31,6 +36,6 @@ export default function Certifications({loaderData}){
         <div className={styles.card_list}>
             {loaderData.data.map((certification) => <CertificationCard certification={certification} />)}
         </div>
-        <Link to="/issuer/certification/0">Launch New Certification</Link>
+        <Link to="/issuer/certification/0" className={styles.floating_button}><Plus/></Link>
     </>);
 }

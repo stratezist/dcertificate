@@ -43,35 +43,28 @@ export default function RootNavigation() {
             <div className={`${styles.nav_container} ${open ? styles.slideIn : styles.slideOut}`} onAnimationEnd={handleAnimationEnd}>
                 <nav className={styles.root_navigation}>
                     <h1>Menu</h1>
-                    {/* <hr style={{width:'300px'}} /> */}
-                    
+
                     <fieldset className={styles.optionsGroup}>
-                        {/* <legend>Recipients</legend> */}
                         {/* <legend>Navigation</legend> */}
-                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/'>Home <ArrowRight size={15}/></NavLink>
-                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/search-certificate'>Search <ArrowRight size={15}/></NavLink> 
-                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/recipient/login'>Recipient Login <ArrowRight size={15}/></NavLink>
-                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/recipient/register'>Recipient Register <ArrowRight size={15}/></NavLink>
-                    {/* </fieldset>
-                    <fieldset className={styles.optionsGroup}> */}
-                        {/* <legend>Issuers</legend> */}
-                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/issuer/login'>Issuer Login <ArrowRight size={15}/></NavLink>
-                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/issuer/register'>Issuer Register <ArrowRight size={15}/></NavLink>
-                    {/* </fieldset>
-                    <fieldset className={styles.optionsGroup}> */}
-                    <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/user-manual'>User Manual <ArrowRight size={15}/></NavLink> {/*User Manual*/}    
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/'>Home <ArrowRight size={15} /></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/search-certificate'>Search <ArrowRight size={15} /></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/recipient/login'>Recipient Login <ArrowRight size={15} /></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/recipient/register'>Recipient Register <ArrowRight size={15} /></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/issuer/login'>Issuer Login <ArrowRight size={15} /></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/issuer/register'>Issuer Register <ArrowRight size={15} /></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? styles.active_navlink : styles.navlink} to='/user-manual'>User Manual <ArrowRight size={15} /></NavLink> {/*User Manual*/}
                     </fieldset>
-                    
-                    <fieldset className = {styles.optionsGroup} >
+
+                    <fieldset className={styles.optionsGroup}>
                         {/* <legend>Controls</legend> */}
-                        <button className={styles.rootNavButton} onClick={async () => await flash([{type:'info', 'message': 'Power on eco mode to disable animations and save battery or compute. Functionality not implemented yet.'}])}>
-                            <LeafIcon size = {20} color={'green'}/> {/*greenyellow will show active. give a notification when activated saying animations disabled.*/}
+                        <button className={styles.rootNavButton} onClick={async () => await flash([{ type: 'info', 'message': 'Power on eco mode to disable animations and save battery or compute. Functionality not implemented yet.' }])}>
+                            <LeafIcon size={20} color={'green'} /> {/*greenyellow will show active. give a notification when activated saying animations disabled.*/}
                         </button>
-                        <button className={styles.rootNavButton}onClick={toggleTheme}>
-                            {theme === 'light' ? <Sun size = {20} /> : <Moon size = {20} />}
+                        <button className={styles.rootNavButton} onClick={toggleTheme}>
+                            {theme === 'light' ? <Sun size={20} /> : <Moon size={20} />}
                         </button>
                     </fieldset>
-                    
+
                 </nav>
             </div>
         }

@@ -40,4 +40,5 @@
 
 .content {
     overflow: auto;
+    position: relative; /* positioning this so that absolute positioning can be used inside */
 }

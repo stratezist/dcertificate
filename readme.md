@@ -8,3 +8,7 @@ This is an educational project
 but, it won't make a difference
 if you decide
 to use it for real purposes.
+
+![Home Page](./screenshots/home_page.png)
+![Root Navigation](./screenshots/root_navigation.png)
+![Certificate Page](./screenshots/certificate_page.png)
