@@ -23,9 +23,11 @@
 .nav_container {
     position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    right: 0;
+    /*bottom: 0; */
+    height: 100dvh; /* trying to fix the eventual height decrease in phones when bottom navigation disappears*/
+    /* width:100dvw; */
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     z-index: 10;
@@ -35,6 +37,8 @@
     justify-content: center;
 
     backdrop-filter: blur(10px);
+
+    overflow: auto;
 }
 
 .slideIn {
@@ -51,7 +55,12 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+}
+
+.root_navigation > h1{
+    font-size: 15pt;
+    margin: 0;
 }
 
 .toggle {
@@ -81,7 +90,7 @@
 }
 
 .navlink {
-    flex: 1;
+    flex: 1 1 auto;
     color: white;
     text-decoration: none;
     /* font-family: monospace; */
@@ -89,6 +98,10 @@
     font-weight: 12pt;
     padding: 10px;
     background-color: rgb(90, 90, 90);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 .navlink:hover {
@@ -96,26 +109,24 @@
 }
 
 .active_navlink {
-    flex: 1 0 0;
+    composes: navlink;
     background-color: rgb(125, 125, 125);
-    /* background-color: var(--accent-background); */
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    /* font-family: monospace; */
-    border-radius: 10px;
-    font-weight: 12pt;
 }
 
 .optionsGroup {
     /* background-color: red; */
-    border: 2px solid grey;
-    border-radius: 20px;
-    padding: 10px;
+    /* border: 1px solid grey; */
+    border: none;
+    border-top: 2px solid grey;
+    /* border-radius: 20px; */
+    /* padding: 10px; */
+    padding: 0;
+    padding-top: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
+    margin: 0;
 }
 
 .optionsGroupWithLegend{
@@ -125,9 +136,11 @@
 
 .optionsGroupWithLegend > legend{
     padding: 0 10px;
+    margin: 0 auto 0 5;
     /* margin: auto; if you want to center the legend */
 }
 
 .rootNavButton {
     composes: navlink;
+    display: block;
 }

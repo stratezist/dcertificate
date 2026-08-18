@@ -82,7 +82,7 @@ export default function Manual() {
                     </p>
 
                     <figure className={styles.erdiagram}>
-                        <img src={erdiagram} />
+                        <img src={erdiagram} alt="Entity Relationship diagram of Dcertificate's logical architecture."/>
                         <figcaption>Entity Relationship Diagram</figcaption>
                     </figure>
 
