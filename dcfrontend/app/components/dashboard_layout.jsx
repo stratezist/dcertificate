@@ -4,13 +4,10 @@ import styles from "./styles/dashboard_layout.module.css";
 
 export default function DashboardLayout({ nav_items, title, username, logoutHandlerURL }) {
     return <div className={styles.pagelayout}>
-        <div className={styles.content}>
+        {/* <div className={styles.content}>
             <Outlet />
-            {/* Following line is temporary fix for text hiding behind floating button.
-                Adds Space at bottom of page if you put this component at bottom of page.
-            */}
-            <div style={{ height: '100px' }}></div>
-        </div>
+        </div> */}
+        <Outlet />
         <nav className={styles.navbar}>
             {title} Account
             <h1>{username}</h1>

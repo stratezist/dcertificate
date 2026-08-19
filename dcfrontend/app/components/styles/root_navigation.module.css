@@ -44,11 +44,11 @@
 }
 
 .slideIn {
-    animation: slide_down 0.5s ease-out forwards;
+    animation: slide_down 0.5s ease-in-out forwards;
 }
 
 .slideOut {
-    animation: slide_up 0.5s ease-out forwards;
+    animation: slide_up 0.5s ease-in-out forwards;
 }
 
 .root_navigation {

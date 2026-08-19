@@ -1,4 +1,4 @@
-.actions_container{
+.actions_container {
     padding: 10px;
     background-color: rgb(230, 230, 230);
     border-radius: 10px;
@@ -12,39 +12,39 @@
     justify-content: center;
 }
 
-.card{
+.card {
     padding: 0;
     width: min(400px, 90%);
-    margin: auto;
 }
 
-.card_content{
+.card_content {
     padding: 10px;
     border-radius: 10px 10px 0 0;
-    background-color: rgb(240,240,240);
+    background-color: rgb(240, 240, 240);
 }
 
-.card_actions{
+.card_actions {
     composes: actions_container;
     border-radius: 0 0 10px 10px;
     margin: 0;
     width: auto;
 }
 
-.card_list{
+.card_list {
     padding: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: start;
     gap: 10px;
 }
 
-.card_list > .card{
+.card_list>.card {
     margin: 0;
 }
 
-.simple_form{
+.simple_form {
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@
     width: min(300px, 90%);
 }
 
-.link_button{
+.link_button {
     background-color: var(--accent-background);
     color: white;
     padding: 10px;
@@ -61,7 +61,7 @@
     text-decoration: none;
 }
 
-.link_button:hover{
+.link_button:hover {
     background-color: var(--accent-background-hover);
 }
 
@@ -87,10 +87,23 @@
     background-color: var(--accent-background-hover);
 }
 
-.delete_button{
+.delete_button {
     background-color: rgb(255, 80, 80);
 }
 
-.delete_button:hover{
+.delete_button:hover {
     background-color: rgb(255, 50, 50);
+}
+
+.content_div {
+    background-color: blue;
+    overflow: auto;
+    /* isolates internal widgets from affecting outside or the container size. 
+    + optimization to prevent internal events avoid extenral calculations */
+    /* For now, it is not complex enough to apply this optimization */
+    /* contain: layout; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }

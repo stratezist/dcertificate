@@ -31,11 +31,15 @@ function CertificationCard({certification}){
 }
 
 export default function Certifications({loaderData}){
-    return (<>
-        <h1>Certifications</h1>
-        <div className={styles.card_list}>
-            {loaderData.data.map((certification) => <CertificationCard certification={certification} />)}
-        </div>
+    return (<div className={styles.content_div}>
         <Link to="/issuer/certification/0" className={styles.floating_button}><Plus/></Link>
-    </>);
+        <div style={{backgroundColor:"green", padding: "5px", overflow: "auto"}}>
+            <h1>Certifications</h1>
+            
+            <div className={styles.card_list} style={{backgroundColor:"red"}}>
+                {loaderData.data.map((certification) => <CertificationCard certification={certification} />)}
+            </div>
+            <div style={{height:'100px', backgroundColor:'transparent'}}>Spacing for floating button.</div>
+        </div>
+    </div>);
 }
