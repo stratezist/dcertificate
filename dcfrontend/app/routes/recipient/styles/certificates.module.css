@@ -5,26 +5,19 @@
   }
 }
 
-.certificate_card{
+/* .certificate_card{
     border: 1px solid black;
     border-radius: 5px;
     padding: 10px;
     width: min(500px,100%);
     flex-shrink: 0;
     animation: slideDownFadeIn 0.25s linear forwards;
-}
+} */
 
 .invalid_certificate_card{
   color: grey;
 }
 
 .certificate_list{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
-    padding: 10px;
-    /* flex-direction: column;
-    align-items: center; */
+    composes: card_list from "./commons.module.css";
 }

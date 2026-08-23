@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { backend_request } from "../../lib/backend.js";
 import { useEffect, useState } from "react";
 import styles from "./styles/certificates.module.css";
+import commonStyles from "./styles/commons.module.css";
 import { SquareArrowOutUpRight } from "lucide-react";
 
 export async function clientLoader() {
@@ -22,15 +23,21 @@ function CertificatePreviewCard({ certificate }) {
     const certificate_relative_url = `/certificate/${certificate.certificate_id}`;
 
     return <div className={certificate.valid?
-        styles.certificate_card : `${styles.certificate_card} ${styles.invalid_certificate_card}`
+        commonStyles.card : `${commonStyles.card} ${styles.invalid_certificate_card}`
     }>
-        <p>
-            <u><b>{certificate.title}</b></u><br/>
-            by {certificate.issuer_display_name} <br />
-            Issue Time: {certificate.issue_time} UTC<br />
-            Certificate ID: {certificate.certificate_id} 
-        </p>
-        <Link to={certificate_relative_url}><SquareArrowOutUpRight/></Link>
+
+        <div className={commonStyles.card_content}>
+            <h1>{certificate.title}</h1>
+            <p>by {certificate.issuer_display_name}<br/><hr/></p>
+            <p>Issue Time: {certificate.issue_time} UTC</p>
+            <p>ID: {certificate.certificate_id}</p>
+        </div>
+        <div className={commonStyles.card_actions}>
+        <Link to={certificate_relative_url} className={commonStyles.card_action_button}>
+        {/* <SquareArrowOutUpRight size='12pt' strokeWidth='2px'/> */}
+        View
+        </Link>
+        </div>
     </div>;
 }
 
@@ -72,17 +79,17 @@ export default function CertificatesPage({ loaderData }) {
         set_valid((v) => !v);
     }
 
-    return (<>
+    return (<div className = {commonStyles.scrollable_content_div}>
         <h1>Certificates</h1>
         <input type='checkbox' name="valid" checked={valid} onChange={toggle_valid} />
         <label for='valid'> Valid certificates only</label>
 
-        <div className={styles.certificate_list}>
+        <div className={commonStyles.card_list}>
             {valid ? 
                 loaderData.map(certificate => (certificate.valid && <CertificatePreviewCard certificate={certificate} />)) :
                 loaderData.map(certificate => <CertificatePreviewCard certificate={certificate} />)
             }
         </div>
-    </>);
+    </div>);
 
 }

@@ -1,24 +1,25 @@
 import { Form, redirect } from 'react-router';
 import { useState } from 'react';
-import styles from './styles/commons.module.css';
+import commonStyles from './styles/commons.module.css';
+import styles from "./styles/certification.module.css";
 import Certificate from '../../components/certificate';
 import { backend_request } from '../../lib/backend';
 
 export async function clientLoader({ params }) {
     // IDs start from 1
     // Use 0 for add page.
-    if(params.id !== '0'){
+    if (params.id !== '0') {
         const response_json = backend_request(
-            `issuer/certification-details/${params.id}`,{
-                method: "GET",
-                credentials: "include"
-            }
+            `issuer/certification-details/${params.id}`, {
+            method: "GET",
+            credentials: "include"
+        }
         );
 
         return response_json;
     }
     else
-        return {data: {id: 0, validity_limit: null}};
+        return { data: { id: 0, validity_limit: null } };
 }
 
 export async function clientAction({ request }) {
@@ -38,15 +39,15 @@ export async function clientAction({ request }) {
     // }
 
     const response_json = await backend_request(
-        'issuer/certification',{
-            method: 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: request_json,
-            credentials: 'include'
-        }
+        'issuer/certification', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: request_json,
+        credentials: 'include'
+    }
     );
 
-    if(response_json.success)
+    if (response_json.success)
         return redirect('/issuer/certifications');
 
 
@@ -73,24 +74,29 @@ export default function CertificationPage({ loaderData }) {
         set_preview_data((prev) => ({ ...prev, [name]: value }));
     }
 
-    return <>
-        <h1>{(certification_id === 0)?'New Certification':'Edit Certification'}</h1>
-        <Form method='post' className={styles.simple_form}>
-            {(certification_id !== 0) &&
-            <>  <label for='certification_id'>Certification ID</label>
-                <input name='certification_id' type='text' value={certification_id} readonly={true}/>
-            </>}
-            <label for='title'>Title</label>
-            <input name='title' type='text' required='true' onChange={update_preview} value={preview_data.title}/>
-            <label for='pre_subject'>Text before recipient's name</label>
-            <input name='pre_subject' type='text' onChange={update_preview} value={preview_data.pre_subject}/>
-            <label for='post_subject'>Text after recepient's name</label>
-            <input name='post_subject' type='text' onChange={update_preview} value={preview_data.post_subject}/>
-            <label for='validity_limit'>Validity (No. of days or 0 for infinite)</label>
-            <input name='validity_limit' type='number' required='true' defaultValue={loaderData.data.validity_limit || 0} />
-            <input type='submit' value={(certification_id === 0)?'Launch':'Update'} />
-        </Form>
-        <h1>Preview</h1>
-        <Certificate data={preview_data} />
-    </>;
+    return <div className={styles.certification_content_div} styles={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+        <div className={styles.certification_form}>
+            <h1>{(certification_id === 0) ? 'New Certification' : 'Edit Certification'}</h1>
+            <Form method='post' className={commonStyles.simple_form}>
+                {(certification_id !== 0) &&
+                    <>  <label for='certification_id'>Certification ID</label>
+                        <input name='certification_id' type='text' value={certification_id} readonly={true} />
+                    </>}
+                <label for='title'>Title</label>
+                <input name='title' type='text' required='true' onChange={update_preview} value={preview_data.title} />
+                <label for='pre_subject'>Text before recipient's name</label>
+                <input name='pre_subject' type='text' onChange={update_preview} value={preview_data.pre_subject} />
+                <label for='post_subject'>Text after recepient's name</label>
+                <input name='post_subject' type='text' onChange={update_preview} value={preview_data.post_subject} />
+                <label for='validity_limit'>Validity (No. of days or 0 for infinite)</label>
+                <input name='validity_limit' type='number' required='true' defaultValue={loaderData.data.validity_limit || 0} />
+                <input type='submit' value={(certification_id === 0) ? 'Launch' : 'Update'} />
+            </Form>
+        </div>
+        <div className={styles.certification_preview}>
+            {/* <h1>Preview</h1> */}
+            <Certificate data={preview_data} />
+            <p>Preview</p>
+        </div>
+    </div>;
 }

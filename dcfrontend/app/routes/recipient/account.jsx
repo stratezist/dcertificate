@@ -1,5 +1,6 @@
 import { redirect } from "react-router";
 import { backend_request } from "../../lib/backend";
+import styles from "./styles/commons.module.css";
 
 export async function clientAction({request}) {
 
@@ -14,8 +15,8 @@ export async function clientAction({request}) {
 }
 
 export default function AccountPage(){
-    return <>
+    return <div className={styles.scrollable_content_div}>
         <h1>Manage Account</h1>
         <p>Page for future extension.</p>
-    </>;
+    </div>;
 }

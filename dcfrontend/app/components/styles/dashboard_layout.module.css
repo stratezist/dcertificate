@@ -3,7 +3,8 @@
     /*Give the navbar exactly the space its content needs, and give all remaining space to .content.*/
     grid-template-columns: 1fr auto; 
     /* display: flex;
-    flex-direction: row; */
+    flex-direction: row;
+    justify-content: space-between; */
     align-items: stretch; /* items fill the grid */
     gap: 10px;
     padding: 10px;
@@ -12,6 +13,7 @@
 }
 
 .navbar {
+    /* flex: 0 0 auto; */
     display: flex;
     flex-direction: column;
     row-gap: 1pt;
@@ -40,10 +42,17 @@
 }
 
 .content {
+    /* flex: 1 0 0; */
     /* overflow: auto; */
     position: relative; /* positioning this so that absolute positioning can be used inside */
     /* display: flex;
     flex-direction: column; */
     max-height: 100dvh;
     /* align-items: stretch; */
+}
+
+@media (width < 800px){
+    .navbar{
+        display: none;
+    }
 }

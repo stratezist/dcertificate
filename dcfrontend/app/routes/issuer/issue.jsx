@@ -66,7 +66,7 @@ export default function Certificates({loaderData}){
         }
     }, [action_data]);
     
-    return <>
+    return <div className={styles.scrollable_content_div}>
         <h1>Issue Certificate</h1>
         {(function () {
             if(recipient !== null)
@@ -92,5 +92,5 @@ export default function Certificates({loaderData}){
                     <input type="submit" name="fetch" value="Fetch Details" />
                 </Form>;
         })()}
-    </>;
+    </div>;
 }

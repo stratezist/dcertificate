@@ -42,7 +42,7 @@ export async function clientAction({ request }) {
 export default function RevokePage({ loaderData }) {
     const navigate = useNavigate();
 
-    return <>
+    return <div className={styles.scrollable_content_div}>
         <h1>Revoke Certificate</h1>
         {(loaderData?.success) ?
             <>
@@ -66,5 +66,5 @@ export default function RevokePage({ loaderData }) {
                 <input type='submit' value='Fetch Details' />
             </Form>
         }
-    </>
+    </div>
 }
