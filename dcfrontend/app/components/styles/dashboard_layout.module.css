@@ -24,6 +24,16 @@
     overflow: auto;
 }
 
+.navbarMobile {
+    composes: navbar;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
 .navlink {
     color: black;
     text-decoration: none;
@@ -51,8 +61,7 @@
     /* align-items: stretch; */
 }
 
-@media (width < 800px){
-    .navbar{
-        display: none;
-    }
+.toggleNav{
+    composes: toggle from "./root_navigation.module.css";
+    z-index: 20;
 }
