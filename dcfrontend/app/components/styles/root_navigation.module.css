@@ -1,13 +1,13 @@
-@keyframes slide_down {
+@keyframes slide_in {
     from {
-        transform: translateY(-20px);
+        transform: translateY(100px);
         opacity: 0%;
     }
 }
 
-@keyframes slide_up {
+@keyframes slide_out {
     to {
-        transform: translateY(-20px);
+        transform: translateY(100px);
         opacity: 0%;
     }
 }
@@ -44,11 +44,11 @@
 }
 
 .slideIn {
-    animation: slide_down 0.5s ease-in-out forwards;
+    animation: slide_in 0.25s ease-in-out forwards;
 }
 
 .slideOut {
-    animation: slide_up 0.5s ease-in-out forwards;
+    animation: slide_out 0.25s ease-in-out forwards;
 }
 
 .root_navigation {
