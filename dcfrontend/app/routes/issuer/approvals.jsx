@@ -30,6 +30,8 @@ export async function clientAction({ request }) {
         // or better, name the submit button/input as "action".
         // then here check the value of action like -
         // if form_object.action === 'delete' or form_object.action === 'approve'.
+        
+        // if(!window.confirm("Are you sure to delete this approval?")) return;
 
         const response_json = await backend_request(
             'issuer/approval/delete', {
@@ -77,10 +79,10 @@ export async function clientAction({ request }) {
 function ApprovalCard({ approval }) {
     return <div className={styles.card}>
         <div className={styles.card_content}>
-                <h1>{approval.certification_title}</h1>
-                <p>{approval.issuer_display_name}</p>
+            <h1>{approval.certification_title}</h1>
+            <p>{approval.issuer_display_name}</p>
         </div>
-        <Form method="POST" className={styles.card_actions}>
+        <Form method="POST" className={styles.card_actions} onSubmit={(e) => {if(!window.confirm('Remove approval?')) e.preventDefault()}}>
             <input type="hidden" name="certification_id" value={approval.certification_id} />
             {/* <input type="submit" name="delete" value="Delete" /> */}
             <button className={styles.delete_button} type="submit" name="delete" value="delete">Delete</button>
@@ -100,8 +102,8 @@ export default function Approvals({ loaderData }) {
     }, [action_data]);
 
     return <div className={styles.scrollable_content_div}>
-        
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h1>Add Approval</h1>
             {(certification === null) ?
                 <Form method="POST" className={styles.simple_form}>
